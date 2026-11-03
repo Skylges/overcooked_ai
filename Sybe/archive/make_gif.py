@@ -10,7 +10,7 @@ from overcooked_ai_py.visualization.state_visualizer import StateVisualizer
 LAYOUT_NAME = "cramped_room"
 HORIZON = 400
 FPS = 30
-OUTPUT_DIR = os.path.join("Sybe", "visualizations", "game1")
+OUTPUT_DIR = os.path.join("Sybe", "experiments", "game1")
 
 # --- Utility Functions ---
 

@@ -29,7 +29,7 @@ visualizer = StateVisualizer()
 
 # 4. Render and Save
 # You need the 'grid' from the mdp to tell the visualizer where the walls/counters are
-img_dir = "Sybe/visualizations"
+img_dir = "Sybe/replays"
 if not os.path.exists(img_dir):
     os.makedirs(img_dir)
 
