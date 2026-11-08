@@ -6,7 +6,20 @@ from overcooked_ai_py.mdp.overcooked_env import OvercookedEnv
 from overcooked_ai_py.mdp.overcooked_mdp import OvercookedGridworld
 from overcooked_ai_py.visualization.state_visualizer import StateVisualizer
 
-def stitch_gif(frames_dir, gif_name="0trajectory.gif", fps=10):
+def save_frames(trajectory, out_dir):
+    """Render a trajectory into individual PNG frames."""
+    out_dir = Path(out_dir)
+    out_dir.mkdir(parents=True, exist_ok=True)
+
+    StateVisualizer().display_rendered_trajectory(
+        trajectories=trajectory,
+        img_directory_path=str(out_dir),
+        ipython_display=False,
+    )
+
+    return out_dir
+
+def stitch_gif(frames_dir, gif_name="_trajectory.gif", fps=10):
     """Combine the numbered PNGs in frames_dir into a GIF."""
     frames_dir = Path(frames_dir)
     frame_files = sorted(
@@ -21,10 +34,6 @@ def stitch_gif(frames_dir, gif_name="0trajectory.gif", fps=10):
 
 
 def save_gif(trajectory, out_dir, fps=10):
-    """Frames + stitching in one call."""
-    StateVisualizer().display_rendered_trajectory(
-        trajectories=trajectory,
-        img_directory_path=str(out_dir),
-        ipython_display=False,
-    )
-    return stitch_gif(out_dir, fps=fps)
+    """Render a trajectory and combine its frames into a GIF."""
+    frames_dir = save_frames(trajectory, out_dir)
+    return stitch_gif(frames_dir, fps=fps)

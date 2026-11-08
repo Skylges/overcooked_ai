@@ -9,6 +9,18 @@ GIF_FPS = 10
 HUD_HEIGHT = 60
 BG_COLOR = (153, 102, 0)
 
+EXPERIMENTS = [
+    "random",
+    "ddqn_baseline",
+    "independent_curiosity",
+]
+
+# AGENT_PAIRS = {
+#     "random": ("random", "random"),
+#     "ddqn_baseline": ("ddqn", "ddqn"),
+#     "independent_curiosity": ("curiosity", "curiosity"),
+# }
+
 # Paths are relative to this file, so scripts work from any working directory
 BASE_DIR = Path(__file__).resolve().parent
-OUTPUT_DIR = BASE_DIR / "experiments" / "random" / "run_000001" / "renders" / "episode_000003"
+# OUTPUT_DIR = BASE_DIR / "experiments" / "random" / "run_000001" / "renders" / "episode_000004"

@@ -10,6 +10,8 @@
 - Implemented manual stitching of pngs to create a gif
 - Created an interactive viewer in a pygame environment
 - Added HUD to viewer, improved UX with tap/hold of buttons.
+- Restructured code; created file hierarchy
+- Created next run function and improved pathing
 
 ### Issues: ###
 - (base) env? check correctness
